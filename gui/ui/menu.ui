@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>menu</class>
+ <widget class="QMainWindow" name="menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>418</width>
+    <height>266</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>418</width>
+    <height>266</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>418</width>
+    <height>266</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Windows De-Bloat Tool</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="4">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Features To Remove</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QCheckBox" name="disable_xps">
+         <property name="toolTip">
+          <string>Disable XPS (Microsoft's PDF)</string>
+         </property>
+         <property name="text">
+          <string>Remove XPS</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_gadgets">
+         <property name="toolTip">
+          <string>Removes the desktop gadgets.</string>
+         </property>
+         <property name="text">
+          <string>Remove Gadgets</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_tablet">
+         <property name="toolTip">
+          <string>This is not a tablet PC.</string>
+         </property>
+         <property name="text">
+          <string>Remove Tablet PC Stuff</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_dotNet">
+         <property name="toolTip">
+          <string>Microsoft .NET Framework</string>
+         </property>
+         <property name="text">
+          <string>Remove .NET Framework</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_search">
+         <property name="toolTip">
+          <string>Disable indexing and search.</string>
+         </property>
+         <property name="text">
+          <string>Remove Indexing/Search</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_games">
+         <property name="toolTip">
+          <string>Minesweeper, FreeCell, etc.</string>
+         </property>
+         <property name="text">
+          <string>Remove Windows Games</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_printing">
+         <property name="toolTip">
+          <string>Remove printing services.</string>
+         </property>
+         <property name="text">
+          <string>Remove Printing Services</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_ie">
+         <property name="toolTip">
+          <string>Remove Internet Explorer</string>
+         </property>
+         <property name="text">
+          <string>Remove Internet Explorer</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_media">
+         <property name="toolTip">
+          <string>Removes Windows Media programs.</string>
+         </property>
+         <property name="text">
+          <string>Remove Windows Media Programs</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="btn_apply">
+      <property name="text">
+       <string>Apply</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="2">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Startup And Services</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QCheckBox" name="disable_boot">
+         <property name="text">
+          <string>Disable Startup Programs</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_services">
+         <property name="text">
+          <string>Disable Trivial Services</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Miscellaneous</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QCheckBox" name="apply_settings">
+         <property name="toolTip">
+          <string>Apply various useful system settings.</string>
+         </property>
+         <property name="text">
+          <string>Apply Useful Settings</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
