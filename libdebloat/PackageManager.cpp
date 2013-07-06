@@ -22,7 +22,7 @@ PackageManager::~PackageManager()
 
 void PackageManager::scanPackages()
 {
-	std::string res = runProcess("dism /Online /Get-Packages", "");
+	std::string res = runProcess("C:\\Windows\\sysnative\\dism.exe /Online /Get-Packages", "");
 
 	mPackages.clear();
 
@@ -68,7 +68,7 @@ void PackageManager::scanPackages()
 
 void PackageManager::scanFeatures()
 {
-	std::string res = runProcess("dism /Online /Get-Features", "");
+	std::string res = runProcess("C:\\Windows\\sysnative\\dism.exe /Online /Get-Features", "");
 
 	mFeatures.clear();
 
@@ -110,7 +110,7 @@ void PackageManager::scanFeatures()
 
 void PackageManager::setFeatureEnabled(const std::string& pName, bool pEnabled)
 {
-	std::string cmd("dism /NoRestart /Online ");
+	std::string cmd("C:\\Windows\\sysnative\\dism.exe /NoRestart /Online ");
 
 	if (pEnabled)
 	{
@@ -129,7 +129,7 @@ void PackageManager::setFeatureEnabled(const std::string& pName, bool pEnabled)
 
 void PackageManager::removePackage(const std::string& pName)
 {
-	std::string cmd("dism /NoRestart /Online /Remove-Package /PackageName:");
+	std::string cmd("C:\\Windows\\sysnative\\dism.exe /NoRestart /Online /Remove-Package /PackageName:");
 	cmd += pName;
 
 	runProcess(cmd, "");
@@ -137,5 +137,5 @@ void PackageManager::removePackage(const std::string& pName)
 
 void PackageManager::cleanupServicePack()
 {
-	runProcess("dism /NoRestart /Online /Cleanup-Image /spsuperseded /hidesp", "");
+	runProcess("C:\\Windows\\sysnative\\dism.exe /NoRestart /Online /Cleanup-Image /spsuperseded /hidesp", "");
 }
