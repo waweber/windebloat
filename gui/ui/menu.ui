@@ -33,6 +33,41 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="2">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Miscellaneous</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QCheckBox" name="apply_settings">
+         <property name="toolTip">
+          <string>Apply various useful system settings.</string>
+         </property>
+         <property name="text">
+          <string>Apply Useful Settings</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="0" rowspan="4">
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
@@ -153,29 +188,6 @@
       </layout>
      </widget>
     </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="btn_apply">
-      <property name="text">
-       <string>Apply</string>
-      </property>
-      <property name="checkable">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item row="0" column="2">
      <widget class="QGroupBox" name="groupBox_2">
       <property name="title">
@@ -205,31 +217,39 @@
       </layout>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="title">
-       <string>Miscellaneous</string>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="btn_apply">
+      <property name="text">
+       <string>Apply</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QCheckBox" name="apply_settings">
-         <property name="toolTip">
-          <string>Apply various useful system settings.</string>
-         </property>
-         <property name="text">
-          <string>Apply Useful Settings</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_apply</sender>
+   <signal>clicked()</signal>
+   <receiver>menu</receiver>
+   <slot>apply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>323</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>apply()</slot>
+ </slots>
 </ui>
