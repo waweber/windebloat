@@ -22,7 +22,7 @@ const Feature gFeatures[] =
 	{"TabletPCOC",							"tablet"},
 	{"Printing-Foundation-Features",		"printing"},
 	{"FaxServicesClientPackage",			"fax"},
-	{"Xps-Foundation-Xps-viewer",			"xps"},
+	{"Xps-Foundation-Xps-Viewer",			"xps"},
 	{"Printing-XPSServices-Features",		"xps"},
 	{"SearchEngine-Client-Package"		,	"search"},
 	{"Internet-Explorer-Optional-amd64",	"ie"},

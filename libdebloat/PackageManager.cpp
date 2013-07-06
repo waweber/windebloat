@@ -121,16 +121,18 @@ void PackageManager::setFeatureEnabled(const std::string& pName, bool pEnabled)
 		cmd += "/Disable-Feature ";
 	}
 
-	cmd += "/FeatureName:";
+	cmd += "/FeatureName:\"";
 	cmd += pName;
+	cmd += "\"";
 
 	runProcess(cmd, "");
 }
 
 void PackageManager::removePackage(const std::string& pName)
 {
-	std::string cmd("C:\\Windows\\sysnative\\dism.exe /NoRestart /Online /Remove-Package /PackageName:");
+	std::string cmd("C:\\Windows\\sysnative\\dism.exe /NoRestart /Online /Remove-Package /PackageName:\"");
 	cmd += pName;
+	cmd += "\"";
 
 	runProcess(cmd, "");
 }
