@@ -98,7 +98,7 @@ void Uninstaller::disableFeatures()
 						{
 							//do it
 							emit progress(float(mProgress) / float(mJobs),
-									std::string("Removing ") + itr2->name);
+									std::string("Disabling ") + itr2->name);
 							pkg.setFeatureEnabled(itr2->name, false);
 						} catch (const std::exception&)
 						{

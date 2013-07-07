@@ -2,23 +2,15 @@
 <ui version="4.0">
  <class>menu</class>
  <widget class="QMainWindow" name="menu">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>418</width>
-    <height>391</height>
-   </rect>
-  </property>
   <property name="minimumSize">
    <size>
-    <width>418</width>
+    <width>414</width>
     <height>391</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>418</width>
+    <width>414</width>
     <height>391</height>
    </size>
   </property>
@@ -59,7 +51,7 @@
     <item row="0" column="0" rowspan="6">
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
-       <string>Features To Remove</string>
+       <string>Features To Disable</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -117,7 +109,7 @@
           <string>Disable XPS (Microsoft's PDF)</string>
          </property>
          <property name="text">
-          <string>Remove XPS</string>
+          <string>Disable XPS</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -130,7 +122,7 @@
           <string>Removes the desktop gadgets.</string>
          </property>
          <property name="text">
-          <string>Remove Gadgets</string>
+          <string>Disable Gadgets</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -156,7 +148,7 @@
           <string>This is not a tablet PC.</string>
          </property>
          <property name="text">
-          <string>Remove Tablet PC Stuff</string>
+          <string>Disable Tablet PC Stuff</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -169,7 +161,7 @@
           <string>Microsoft .NET Framework</string>
          </property>
          <property name="text">
-          <string>Remove .NET Framework</string>
+          <string>Disable .NET Framework</string>
          </property>
         </widget>
        </item>
@@ -179,7 +171,7 @@
           <string>Disable indexing and search.</string>
          </property>
          <property name="text">
-          <string>Remove Indexing/Search</string>
+          <string>Disable Indexing/Search</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -192,7 +184,7 @@
           <string>Minesweeper, FreeCell, etc.</string>
          </property>
          <property name="text">
-          <string>Remove Windows Games</string>
+          <string>Disable Windows Games</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -205,7 +197,7 @@
           <string>Remove printing services.</string>
          </property>
          <property name="text">
-          <string>Remove Printing Services</string>
+          <string>Disable Printing Services</string>
          </property>
         </widget>
        </item>
@@ -215,7 +207,7 @@
           <string>Remove Internet Explorer</string>
          </property>
          <property name="text">
-          <string>Remove Internet Explorer</string>
+          <string>Disable Internet Explorer</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -228,7 +220,7 @@
           <string>Removes Windows Media programs.</string>
          </property>
          <property name="text">
-          <string>Remove Windows Media Programs</string>
+          <string>Disable Windows Media Programs</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -247,7 +239,8 @@
        <item>
         <widget class="QCheckBox" name="apply_settings">
          <property name="toolTip">
-          <string>Apply various useful system settings.</string>
+          <string>Applies the following settings:
+ - Always show file extensions</string>
          </property>
          <property name="text">
           <string>Apply Useful Settings</string>
@@ -281,6 +274,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QCheckBox" name="disable_boot">
+         <property name="toolTip">
+          <string>Removes all startup program entries.</string>
+         </property>
          <property name="text">
           <string>Disable Startup Programs</string>
          </property>
@@ -291,6 +287,9 @@
        </item>
        <item>
         <widget class="QCheckBox" name="disable_services">
+         <property name="toolTip">
+          <string>Disable any services which are unimportant and can be safely disabled.</string>
+         </property>
          <property name="text">
           <string>Disable Trivial Services</string>
          </property>
@@ -315,6 +314,9 @@
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
       <property name="textInteractionFlags">
        <set>Qt::NoTextInteraction</set>
