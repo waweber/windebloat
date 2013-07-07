@@ -16,6 +16,8 @@
 void uninstallFeatures(const std::list<const char*>& pFuncs)
 {
 	PackageManager pkg;
+	pkg.scanFeatures();
+
 	int features = sizeof(gFeatures) / sizeof(Feature);
 	for (std::list<const char*>::const_iterator itr = pFuncs.begin();
 			itr != pFuncs.end(); ++itr)
@@ -24,13 +26,23 @@ void uninstallFeatures(const std::list<const char*>& pFuncs)
 		{
 			if (strcmp(*itr, gFeatures[i].function) == 0)
 			{
-				//uninstall
-				try
+				//only if it's currently enabled
+				for (PackageManager::PackageList::const_iterator itr =
+						pkg.getPackages().begin();
+						itr != pkg.getPackages().end(); ++itr)
 				{
-					pkg.setFeatureEnabled(gFeatures[i].name, false);
-				} catch (const std::exception&)
-				{
+					if (strcmp((*itr).name.c_str(), gFeatures[i].name) == 0
+							&& strcmp((*itr).state.c_str(), "Enabled") == 0)
+					{
+						//disable
+						try
+						{
+							pkg.setFeatureEnabled(gFeatures[i].name, false);
+						} catch (const std::exception&)
+						{
 
+						}
+					}
 				}
 			}
 		}
