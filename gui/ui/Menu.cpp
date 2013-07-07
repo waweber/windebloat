@@ -10,6 +10,7 @@
 #include "winservices.h"
 #include "libdebloat/PackageManager.h"
 #include "libdebloat/ServiceController.h"
+#include "libdebloat/Registry.h"
 
 void Uninstaller::doUninstall()
 {
@@ -55,6 +56,10 @@ void Uninstaller::doUninstall()
 
 	//disable services
 	disableServices();
+
+	//remove startups if called for
+	if (mMenu->getUi().disable_boot->isChecked())
+		clearStartupPrograms();
 
 	emit onComplete();
 }
@@ -137,6 +142,35 @@ void Uninstaller::disableServices()
 	}
 }
 
+void Uninstaller::clearStartupPrograms()
+{
+	//todo: might be in other keys, too
+	try
+	{
+		std::vector<std::string> vals = getRegistryValues(HKEY_LOCAL_MACHINE,
+				"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run");
+
+		for (std::vector<std::string>::const_iterator itr = vals.begin();
+				itr != vals.end(); ++itr)
+		{
+			//todo: figure out what startups to keep
+			try
+			{
+				deleteRegistryValue(HKEY_LOCAL_MACHINE,
+						"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+						itr->c_str());
+				printf("deleted %s\n", itr->c_str());
+			} catch (const std::exception&)
+			{
+
+			}
+		}
+	} catch (const std::exception&)
+	{
+
+	}
+}
+
 Menu::Menu() :
 		mUninstaller(NULL)
 {
@@ -197,3 +231,4 @@ bool Menu::close()
 		return QMainWindow::close();
 	}
 }
+
