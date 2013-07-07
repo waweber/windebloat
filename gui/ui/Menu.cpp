@@ -145,10 +145,13 @@ void Uninstaller::disableServices()
 void Uninstaller::clearStartupPrograms()
 {
 	//todo: might be in other keys, too
+
+	//64-bit keys
 	try
 	{
 		std::vector<std::string> vals = getRegistryValues(HKEY_LOCAL_MACHINE,
-				"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run");
+				"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+				KEY_WOW64_64KEY);
 
 		for (std::vector<std::string>::const_iterator itr = vals.begin();
 				itr != vals.end(); ++itr)
@@ -158,8 +161,33 @@ void Uninstaller::clearStartupPrograms()
 			{
 				deleteRegistryValue(HKEY_LOCAL_MACHINE,
 						"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
-						itr->c_str());
-				printf("deleted %s\n", itr->c_str());
+						itr->c_str(), KEY_WOW64_64KEY);
+			} catch (const std::exception&)
+			{
+
+			}
+		}
+	} catch (const std::exception&)
+	{
+
+	}
+
+	//32-bit keys
+	try
+	{
+		std::vector<std::string> vals = getRegistryValues(HKEY_LOCAL_MACHINE,
+				"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+				KEY_WOW64_32KEY);
+
+		for (std::vector<std::string>::const_iterator itr = vals.begin();
+				itr != vals.end(); ++itr)
+		{
+			//todo: figure out what startups to keep
+			try
+			{
+				deleteRegistryValue(HKEY_LOCAL_MACHINE,
+						"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+						itr->c_str(), KEY_WOW64_32KEY);
 			} catch (const std::exception&)
 			{
 

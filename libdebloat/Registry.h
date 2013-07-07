@@ -17,8 +17,8 @@ void getRegistryKeyValue(HKEY pRoot, const char* pKey, const char* pValue,
 void setRegistryKeyValue(HKEY pRoot, const char* pKey, const char* pValue,
 		int pType, const void* pData, int pSize);
 
-std::vector<std::string> getRegistryValues(HKEY pRoot, const char* pKey);
+std::vector<std::string> getRegistryValues(HKEY pRoot, const char* pKey, int pMisc = 0);
 
-void deleteRegistryValue(HKEY pRoot, const char* pKey, const char* pValue);
+void deleteRegistryValue(HKEY pRoot, const char* pKey, const char* pValue, int pMisc = 0);
 
 #endif /* REGISTRY_H_ */

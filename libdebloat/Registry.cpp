@@ -47,12 +47,12 @@ void setRegistryKeyValue(HKEY pRoot, const char* pKey, const char* pValue,
 	}
 }
 
-std::vector<std::string> getRegistryValues(HKEY pRoot, const char* pKey)
+std::vector<std::string> getRegistryValues(HKEY pRoot, const char* pKey, int pMisc)
 {
 	std::vector<std::string> values;
 
 	HKEY key;
-	int res = RegOpenKeyEx(pRoot, pKey, 0, KEY_READ, &key);
+	int res = RegOpenKeyEx(pRoot, pKey, 0, KEY_READ | pMisc, &key);
 	if (res != ERROR_SUCCESS)
 	{
 		throw std::exception();
@@ -78,10 +78,10 @@ std::vector<std::string> getRegistryValues(HKEY pRoot, const char* pKey)
 	return values;
 }
 
-void deleteRegistryValue(HKEY pRoot, const char* pKey, const char* pValue)
+void deleteRegistryValue(HKEY pRoot, const char* pKey, const char* pValue, int pMisc)
 {
 	HKEY key;
-	int res = RegOpenKeyEx(pRoot, pKey, 0, KEY_WRITE, &key);
+	int res = RegOpenKeyEx(pRoot, pKey, 0, KEY_WRITE | pMisc, &key);
 	if (res != ERROR_SUCCESS)
 	{
 		throw std::exception();
