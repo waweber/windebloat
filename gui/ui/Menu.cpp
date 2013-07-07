@@ -8,6 +8,8 @@
 #include "ui/Menu.h"
 #include "winfeatures.h"
 #include "winservices.h"
+#include "libdebloat/PackageManager.h"
+#include "libdebloat/ServiceController.h"
 
 void Uninstaller::doUninstall()
 {
