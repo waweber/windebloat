@@ -13,7 +13,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # Create target
-add_executable(windebloat ${debloatgui_SOURCES})
+add_executable(windebloat WIN32 ${debloatgui_SOURCES})
 
 # Link
 target_link_libraries(windebloat debloat ${QT_LIBRARIES})

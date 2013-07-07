@@ -15,11 +15,13 @@
  * along with WinDeBloat.  If not, see <http://www.gnu.org/licenses/>. 
  */
 
-
+#include <Windows.h>
 #include "ui/Menu.h"
 
-int main(int argc, char** argv)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	int argc;
+	char** argv;
 	QApplication q(argc, argv);
 
 	qRegisterMetaType<std::string>("std::string");
