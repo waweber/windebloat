@@ -26,7 +26,7 @@ const Feature gFeatures[] =
 	{"Printing-XPSServices-Features",		"xps"},
 	{"SearchEngine-Client-Package"		,	"search"},
 	{"Internet-Explorer-Optional-amd64",	"ie"},
-	{"Internet-Explorer-Optional-x86",		"ie"}, //not sure about this one
+	{"Internet-Explorer-Optional-x86",		"ie"},
 };
 
 const int gNumFeatures = sizeof(gFeatures) / sizeof(Feature);
