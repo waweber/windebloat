@@ -47,6 +47,9 @@ void Uninstaller::doUninstall()
 	if (mMenu->getUi().disable_services->isChecked())
 		mFuncs.insert("none");
 
+	//count jobs
+	mJobs = mFuncs.size() * 2;
+
 	//remove features
 	disableFeatures();
 
@@ -85,7 +88,7 @@ void Uninstaller::disableFeatures()
 						try
 						{
 							//do it
-							emit progress(-1,
+							emit progress(float(mProgress) / float(mJobs),
 									std::string("Removing ") + itr2->name);
 							pkg.setFeatureEnabled(itr2->name, false);
 						} catch (const std::exception&)
@@ -100,6 +103,7 @@ void Uninstaller::disableFeatures()
 				}
 			}
 		}
+		++mProgress;
 	}
 }
 
@@ -120,7 +124,7 @@ void Uninstaller::disableServices()
 			//disable
 			try
 			{
-				emit progress(-1,
+				emit progress(float(mProgress) / float(mJobs),
 						std::string("Disabling ") + gServices[i].name);
 				svc.changeServiceType(gServices[i].name,
 						ServiceController::DISABLED);
@@ -129,6 +133,7 @@ void Uninstaller::disableServices()
 
 			}
 		}
+		++mProgress;
 	}
 }
 
@@ -160,7 +165,9 @@ void Menu::finishUp()
 		delete mUninstaller;
 	mUninstaller = NULL;
 
-	close();
+	setEnabled(true);
+	mUi.btn_apply->setEnabled(false);
+	setProgress(1, "Complete");
 }
 
 void Menu::apply()
@@ -178,3 +185,15 @@ void Menu::apply()
 	mWorkThread.start();
 }
 
+bool Menu::close()
+{
+	if (mUninstaller)
+	{
+		//waiting.
+		return false;
+	}
+	else
+	{
+		return QMainWindow::close();
+	}
+}

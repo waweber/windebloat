@@ -26,7 +26,7 @@ signals:
 
 public:
 	Uninstaller(Menu* pMenu) :
-			mMenu(pMenu)
+			mMenu(pMenu), mProgress(0), mJobs(0)
 	{
 
 	}
@@ -35,6 +35,8 @@ protected:
 	typedef std::set<std::string> FunctionList;
 	Menu* mMenu;
 	FunctionList mFuncs;
+	int mJobs;
+	int mProgress;
 
 	void disableFeatures();
 	void disableServices();
@@ -56,6 +58,7 @@ public slots:
 	void apply();
 	void setProgress(float pPct, std::string pText);
 	void finishUp();
+	bool close();
 
 protected:
 	Ui_menu mUi;
