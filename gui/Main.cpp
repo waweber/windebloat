@@ -5,7 +5,7 @@ int main(int argc, char** argv)
 {
 	QApplication q(argc, argv);
 
-	qRegisterMetaType<std::string>();
+	qRegisterMetaType<std::string>("std::string");
 
 	Menu m;
 	m.show();
