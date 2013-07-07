@@ -10,6 +10,7 @@
 
 #include "ui_menu.h"
 #include <set>
+#include <QThread>
 
 class Menu;
 

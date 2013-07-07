@@ -8,7 +8,6 @@
 #include "ui/Menu.h"
 #include "winfeatures.h"
 #include "winservices.h"
-#include <QThread>
 
 void Uninstaller::doUninstall()
 {
