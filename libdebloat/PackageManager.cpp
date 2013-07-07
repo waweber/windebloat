@@ -57,7 +57,7 @@ void PackageManager::scanPackages()
 		{
 			if (current.name.size() > 0)
 			{
-				mPackages.insert(current);
+				mPackages.push_back(current);
 				current = Package();
 			}
 		}
@@ -99,7 +99,7 @@ void PackageManager::scanFeatures()
 		{
 			if (current.name.size() > 0)
 			{
-				mFeatures.insert(current);
+				mFeatures.push_back(current);
 				current = Feature();
 			}
 		}

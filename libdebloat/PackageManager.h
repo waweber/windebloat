@@ -40,8 +40,8 @@ public:
 		std::string state;
 	};
 
-	typedef std::set<Package> PackageSet;
-	typedef std::set<Feature> FeatureSet;
+	typedef std::list<Package> PackageList;
+	typedef std::list<Feature> FeatureList;
 
 	PackageManager();
 	virtual ~PackageManager();
@@ -60,7 +60,7 @@ public:
 	 * Get a list of all found packages.
 	 * @return
 	 */
-	const PackageSet& getPackages() const
+	const PackageList& getPackages() const
 	{
 		return mPackages;
 	}
@@ -69,7 +69,7 @@ public:
 	 * Get a list of all found features.
 	 * @return
 	 */
-	const FeatureSet& getFeatures() const
+	const FeatureList& getFeatures() const
 	{
 		return mFeatures;
 	}
@@ -94,8 +94,8 @@ public:
 	void cleanupServicePack();
 
 protected:
-	PackageSet mPackages;
-	FeatureSet mFeatures;
+	PackageList mPackages;
+	FeatureList mFeatures;
 };
 
 #endif /* PACKAGEMANAGER_H_ */

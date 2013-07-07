@@ -72,7 +72,7 @@ void Uninstaller::disableFeatures()
 				continue; //not needed
 
 			//check if installed
-			for (PackageManager::FeatureSet::const_iterator itr2 =
+			for (PackageManager::FeatureList::const_iterator itr2 =
 					pkg.getFeatures().begin(); itr2 != pkg.getFeatures().end();
 					++itr2)
 			{
