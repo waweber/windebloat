@@ -22,7 +22,7 @@ public slots:
 
 signals:
 	void onComplete();
-	void progress(float pPct, const std::string& pText);
+	void progress(float pPct, std::string pText);
 
 public:
 	Uninstaller(Menu* pMenu) :
@@ -54,7 +54,7 @@ public:
 
 public slots:
 	void apply();
-	void setProgress(float pPct, const std::string& pText);
+	void setProgress(float pPct, std::string pText);
 	void finishUp();
 
 protected:

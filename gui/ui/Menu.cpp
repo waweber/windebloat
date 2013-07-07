@@ -143,7 +143,7 @@ Menu::~Menu()
 
 }
 
-void Menu::setProgress(float pPct, const std::string& pText)
+void Menu::setProgress(float pPct, std::string pText)
 {
 	if (pText != "")
 		mUi.progress_text->setText(QString::fromStdString(pText));
@@ -163,15 +163,15 @@ void Menu::finishUp()
 
 void Menu::apply()
 {
-	//disable all controls (i think)
+	//disable all controls
 	setEnabled(false);
 
 	Uninstaller* u = new Uninstaller(this);
 	u->moveToThread(&mWorkThread);
 
 	QObject::connect(&mWorkThread, SIGNAL(started()), u, SLOT(doUninstall()));
-	QObject::connect(u, SIGNAL(progress(float, const std::string&)), this,
-			SLOT(setProgress(float, const std::string&)));
+	QObject::connect(u, SIGNAL(progress(float, std::string)), this,
+			SLOT(setProgress(float, std::string)));
 	QObject::connect(u, SIGNAL(onComplete()), this, SLOT(finishUp()));
 	mWorkThread.start();
 }
