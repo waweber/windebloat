@@ -65,8 +65,8 @@ std::string runProcess(const std::string& pCmdline, const std::string& pInput)
 			if (!res || nRead == 0)
 				break;
 
-			WriteFile(GetStdHandle(STD_OUTPUT_HANDLE), buf, nRead, &nWrite,
-			NULL);
+			//WriteFile(GetStdHandle(STD_OUTPUT_HANDLE), buf, nRead, &nWrite,
+			//NULL);
 
 			out.append(buf, nRead);
 		}
