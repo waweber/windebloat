@@ -11,7 +11,7 @@
 #include <Windows.h>
 #include <string>
 
-#include <set>
+#include <list>
 
 /**
  * Class that allows adding/removing Windows packages and features.
