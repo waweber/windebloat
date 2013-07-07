@@ -2,30 +2,16 @@
 <ui version="4.0">
  <class>menu</class>
  <widget class="QMainWindow" name="menu">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>418</width>
-    <height>266</height>
-   </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
   <property name="minimumSize">
    <size>
     <width>418</width>
-    <height>266</height>
+    <height>391</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>418</width>
-    <height>266</height>
+    <height>391</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -75,6 +61,55 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
+        <widget class="QCheckBox" name="disable_fax">
+         <property name="toolTip">
+          <string>Disables fax services.</string>
+         </property>
+         <property name="text">
+          <string>Disable Fax Services</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_sharing">
+         <property name="toolTip">
+          <string>Disables network sharing services.</string>
+         </property>
+         <property name="text">
+          <string>Disable Network Sharing</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_homegroup">
+         <property name="toolTip">
+          <string>Disable HomeGroup services.</string>
+         </property>
+         <property name="text">
+          <string>Disable HomeGroup</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_remote">
+         <property name="toolTip">
+          <string>Disables remote access services.</string>
+         </property>
+         <property name="text">
+          <string>Disable Remote Services</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="disable_xps">
          <property name="toolTip">
           <string>Disable XPS (Microsoft's PDF)</string>
@@ -94,6 +129,19 @@
          </property>
          <property name="text">
           <string>Remove Gadgets</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="disable_bluetooth">
+         <property name="toolTip">
+          <string>Disables Bluetooth wireless services.</string>
+         </property>
+         <property name="text">
+          <string>Disable Bluetooth Services</string>
          </property>
          <property name="checked">
           <bool>true</bool>

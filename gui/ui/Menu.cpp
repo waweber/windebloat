@@ -47,16 +47,16 @@ void Menu::apply()
 		list.push_back("ie");
 	if (mUi.disable_media->isChecked())
 		list.push_back("media");
-	//if (mUi.disable_homegroup->isChecked())
-	//	list.push_back("homegroup");
-	//if (mUi.disable_sharing->isChecked())
-	//	list.push_back("sharing");
-	//if (mUi.disable_fax->isChecked())
-	//	list.push_back("fax");
-	//if (mUi.disable_remote->isChecked())
-	//	list.push_back("remote");
-	//if (mUi.disable_bluetooth->isChecked())
-	//	list.push_back("bluetooth");
+	if (mUi.disable_homegroup->isChecked())
+		list.push_back("homegroup");
+	if (mUi.disable_sharing->isChecked())
+		list.push_back("sharing");
+	if (mUi.disable_fax->isChecked())
+		list.push_back("fax");
+	if (mUi.disable_remote->isChecked())
+		list.push_back("remote");
+	if (mUi.disable_bluetooth->isChecked())
+		list.push_back("bluetooth");
 
 	//add services if requested
 	if (mUi.disable_services->isChecked())
