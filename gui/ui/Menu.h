@@ -41,6 +41,7 @@ protected:
 	void disableFeatures();
 	void disableServices();
 	void clearStartupPrograms();
+	void setUsefulOptions();
 };
 
 class Menu: public QMainWindow

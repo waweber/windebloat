@@ -61,6 +61,10 @@ void Uninstaller::doUninstall()
 	if (mMenu->getUi().disable_boot->isChecked())
 		clearStartupPrograms();
 
+	//set options if called for
+	if (mMenu->getUi().apply_settings->isChecked())
+		setUsefulOptions();
+
 	emit onComplete();
 }
 
@@ -193,6 +197,21 @@ void Uninstaller::clearStartupPrograms()
 
 			}
 		}
+	} catch (const std::exception&)
+	{
+
+	}
+}
+
+void Uninstaller::setUsefulOptions()
+{
+	try
+	{
+		//show extensions
+		DWORD zero = 0;
+		setRegistryKeyValue(HKEY_CURRENT_USER,
+				"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+				"HideFileExt", REG_DWORD, &zero, sizeof(DWORD));
 	} catch (const std::exception&)
 	{
 
