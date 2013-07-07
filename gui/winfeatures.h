@@ -29,4 +29,6 @@ const Feature gFeatures[] =
 	{"Internet-Explorer-Optional-x86",		"ie"}, //not sure about this one
 };
 
+const int gNumFeatures = sizeof(gFeatures) / sizeof(Feature);
+
 #endif

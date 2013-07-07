@@ -25,4 +25,6 @@ const Functionality gFunctionalities[] =
 	{"bluetooth",	"Bluetooth"},
 };
 
+const int gNumFunctionalities = sizeof(gFunctionalities) / sizeof(Functionality);
+
 #endif

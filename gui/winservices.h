@@ -51,4 +51,6 @@ const Service gServices[] =
 	{"NetTcpPortSharing",			"none"}, //tcp port sharing
 };
 
+const int gNumServices = sizeof(gServices) / sizeof(Service);
+
 #endif

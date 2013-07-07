@@ -11,7 +11,7 @@
 #include <Windows.h>
 #include <string>
 
-#include <list>
+#include <set>
 
 /**
  * Class that allows adding/removing Windows packages and features.
@@ -40,8 +40,8 @@ public:
 		std::string state;
 	};
 
-	typedef std::list<Package> PackageList;
-	typedef std::list<Feature> FeatureList;
+	typedef std::set<Package> PackageSet;
+	typedef std::set<Feature> FeatureSet;
 
 	PackageManager();
 	virtual ~PackageManager();
@@ -60,7 +60,7 @@ public:
 	 * Get a list of all found packages.
 	 * @return
 	 */
-	const PackageList& getPackages() const
+	const PackageSet& getPackages() const
 	{
 		return mPackages;
 	}
@@ -69,7 +69,7 @@ public:
 	 * Get a list of all found features.
 	 * @return
 	 */
-	const FeatureList& getFeatures() const
+	const FeatureSet& getFeatures() const
 	{
 		return mFeatures;
 	}
@@ -94,8 +94,8 @@ public:
 	void cleanupServicePack();
 
 protected:
-	PackageList mPackages;
-	FeatureList mFeatures;
+	PackageSet mPackages;
+	FeatureSet mFeatures;
 };
 
 #endif /* PACKAGEMANAGER_H_ */
