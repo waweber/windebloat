@@ -1,0 +1,8 @@
+This is WinDeBloat, an application that disables unwanted features in Windows 7.
+
+The following resources are required to build this program:
+	CMake
+	Qt Framework
+	Windows SDK
+
+Building is only supported on a Windows 7 machine, using the MSVC toolchain.
