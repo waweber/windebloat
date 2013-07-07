@@ -154,6 +154,8 @@ void Menu::setProgress(float pPct, std::string pText)
 
 void Menu::finishUp()
 {
+	mWorkThread.terminate();
+
 	if (mUninstaller)
 		delete mUninstaller;
 	mUninstaller = NULL;
