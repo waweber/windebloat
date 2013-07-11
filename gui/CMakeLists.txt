@@ -17,3 +17,6 @@ add_executable(windebloat WIN32 ${debloatgui_SOURCES})
 
 # Link
 target_link_libraries(windebloat debloat ${QT_LIBRARIES})
+
+# Require admin
+set_target_properties(windebloat PROPERTIES LINK_FLAGS "/MANIFESTUAC:\"level='requireAdministrator' uiAccess='false'\"")
