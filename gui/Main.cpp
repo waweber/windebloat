@@ -20,8 +20,8 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	int argc;
-	char** argv;
+	int argc = 0;
+	char** argv = NULL;
 	QApplication q(argc, argv);
 
 	qRegisterMetaType<std::string>("std::string");
