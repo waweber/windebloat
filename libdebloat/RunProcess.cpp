@@ -47,7 +47,8 @@ std::string runProcess(const std::string& pCmdline, const std::string& pInput)
 	SetHandleInformation(stdin_write, HANDLE_FLAG_INHERIT, 0);
 
 	start_info.cb = sizeof(STARTUPINFO);
-	start_info.dwFlags |= STARTF_USESTDHANDLES;
+	start_info.dwFlags |= STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW;
+	start_info.wShowWindow = SW_HIDE;
 	start_info.hStdError = stdout_write;
 	start_info.hStdOutput = stdout_write;
 	start_info.hStdInput = stdin_read;
